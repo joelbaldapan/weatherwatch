@@ -1,62 +1,42 @@
-const API_KEY = "48a18ac69ca341a5bde185718240707";
+// DOM Manipulation
 
-function getRawData(place) {
-  return new Promise((resolve, reject) => {
-    fetch(
-      `http://api.weatherapi.com/v1/forecast.json?key=${API_KEY}&q=${place}&days=6&aqi=no&alerts=no`
-    )
-      .then((response) => response.json())
-      .then((data) => resolve(data))
-      .catch((error) => console.log(error));
-  });
+const name = document.getElementById("name");
+const date = document.getElementById("date");
+const time = document.getElementById("time");
+const temperature = document.getElementById("temperature");
+const condition = document.getElementById("condition");
+const conditionImg = document.getElementById("condition-img");
+const thermalSensation = document.getElementById("thermal-sensation");
+const precipitationAmount = document.getElementById("precipitation-amount");
+const windSpeed = document.getElementById("wind-speed");
+const airHumidity = document.getElementById("air-humidity");
+const uvIndex = document.getElementById("uv-index");
+
+const day1 = document.getElementById("1-day");
+const conditionImg1 = document.getElementById("1-condition-img");
+const condition1 = document.getElementById("1-condition");
+const maxTemperature1 = document.getElementById("1-max-temperature");
+const minTemperature1 = document.getElementById("1-min-temperature");
+const chanceOfRain1 = document.getElementById("1-chance-of-rain");
+
+const day2 = document.getElementById("2-day");
+const conditionImg2 = document.getElementById("2-condition-img");
+const condition2 = document.getElementById("2-condition");
+const maxTemperature2 = document.getElementById("2-max-temperature");
+const minTemperature2 = document.getElementById("2-min-temperature");
+const chanceOfRain2 = document.getElementById("2-chance-of-rain");
+
+const day3 = document.getElementById("3-day");
+const conditionImg3 = document.getElementById("3-condition-img");
+const condition3 = document.getElementById("3-condition");
+const maxTemperature3 = document.getElementById("3-max-temperature");
+const minTemperature3 = document.getElementById("3-min-temperature");
+const chanceOfRain3 = document.getElementById("3-chance-of-rain");
+
+function displayCurrentData(currentData) {
+  console.log(currentData);
 }
 
-function processCurrentData(rawData) {
-  // Current Weather Data
-  const cleanData = {
-    name: rawData.location.name,
-    country: rawData.location.country,
-    dateTime: rawData.location.localtime,
-    weather: rawData.current.condition.text,
-    weatherIcon: rawData.current.condition.icon,
-    temperature: rawData.current.temp_c,
-    thermalSensation: rawData.current.feelslike_c,
-    precipitationAmount: rawData.current.precip_mm,
-    windSpeed: rawData.current.wind_kph,
-    airHumidity: rawData.current.humidity,
-    uvIndex: rawData.current.uv,
-  };
-  return cleanData;
-}
+function displayForecastData(forecastData) {}
 
-function processForecastData(rawData) {
-  // Future Weather Forecast
-  const fullCleanData = [];
-  rawData.forecast.forecastday.forEach((rawForecastData) => {
-    const cleanData = {
-      // PUT: name of the day
-      weather: rawForecastData.day.condition.text,
-      weatherIcon: rawForecastData.day.condition.icon,
-      maxTemperature: rawForecastData.day.maxtemp_c,
-      minTemperature: rawForecastData.day.mintemp_c,
-      chanceOfRain: rawForecastData.day.daily_chance_of_rain,
-    };
-    fullCleanData.push(cleanData);
-  });
-  return fullCleanData;
-}
-
-async function getFullData(place) {
-  try {
-    const rawData = await getRawData(place);
-    console.log(rawData);
-    const currentData = processCurrentData(rawData);
-    console.log(currentData);
-    const forecastData = processForecastData(rawData);
-    console.log(forecastData);
-  } catch (error) {
-    console.log(error);
-  }
-}
-
-export { getFullData };
+export { displayCurrentData, displayForecastData };

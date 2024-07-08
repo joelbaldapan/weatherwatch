@@ -1,3 +1,5 @@
+import { displayCurrentData, displayForecastData } from "./display.js";
+
 const API_KEY = "48a18ac69ca341a5bde185718240707";
 const DAYS = 3;
 
@@ -50,11 +52,10 @@ function processForecastData(rawData) {
 async function getFullData(place) {
   try {
     const rawData = await getRawData(place);
-    console.log(rawData);
     const currentData = processCurrentData(rawData);
-    console.log(currentData);
+    displayCurrentData(currentData);
     const forecastData = processForecastData(rawData);
-    console.log(forecastData);
+    displayForecastData(forecastData);
   } catch (error) {
     console.log(error);
   }
