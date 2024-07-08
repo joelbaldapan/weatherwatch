@@ -34,7 +34,16 @@ const minTemperature3 = document.getElementById("3-min-temperature");
 const chanceOfRain3 = document.getElementById("3-chance-of-rain");
 
 function displayCurrentData(currentData) {
-  console.log(currentData);
+  name.textContent = `${currentData.name}, ${currentData.country}`;
+  date.textContent = currentData.dateTime;
+  temperature.textContent = `${currentData.temperature} °C`;
+  condition.textContent = currentData.condition;
+  conditionImg.src = currentData.conditionIcon;
+  thermalSensation.textContent = `${currentData.thermalSensation} °C`;
+  precipitationAmount.textContent = `${currentData.precipitationAmount} mm`;
+  windSpeed.textContent = `${currentData.windSpeed} kph`;
+  airHumidity.textContent = `${currentData.airHumidity} %`;
+  uvIndex.textContent = currentData.uvIndex;
 }
 
 function displayForecastData(forecastData) {}

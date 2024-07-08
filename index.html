@@ -13,77 +13,80 @@
     <script type="module" src="main.js" defer></script>
     <title>Weather App</title>
   </head>
+
   <body>
-    <h1>Weather App: Demo</h1>
+    <div id="main">
+      <h1>Weather App: Demo</h1>
 
-    <div>
-      <h2>Main Details</h2>
+      <div class="main-container">
+        <h2>Main Details</h2>
 
-      <h3 id="name"></h3>
-      <h3 id="date"></h3>
-      <h3 id="time"></h3>
-      <h3 id="temperature"></h3>
-      <h3 id="condition"></h3>
-      <img id="condition-img" src="" />
-    </div>
-
-    <div>
-      <h2>Today's weather details</h2>
-
-      <div class="current-container">
-        <h3>Thermal Sensation</h3>
-        <h4 id="thermal-sensation">1</h4>
+        <h3 id="name"></h3>
+        <h3 id="date"></h3>
+        <h3 id="time"></h3>
+        <h3 id="temperature"></h3>
+        <h3 id="condition"></h3>
+        <img id="condition-img" src="" />
       </div>
 
-      <div class="current-container">
-        <h3>Precipitation Amount</h3>
-        <h4 id="precipitation-amount">1</h4>
+      <div>
+        <h2>Today's weather details</h2>
+
+        <div class="current-container">
+          <h3>Thermal Sensation</h3>
+          <h4 id="thermal-sensation">1</h4>
+        </div>
+
+        <div class="current-container">
+          <h3>Precipitation Amount</h3>
+          <h4 id="precipitation-amount">1</h4>
+        </div>
+
+        <div class="current-container">
+          <h3>Wind Speed</h3>
+          <h4 id="wind-speed">1</h4>
+        </div>
+
+        <div class="current-container">
+          <h3>Air Humidity</h3>
+          <h4 id="air-humidity">1</h4>
+        </div>
+
+        <div class="current-container">
+          <h3>UV Index</h3>
+          <h4 id="uv-index">1</h4>
+        </div>
       </div>
 
-      <div class="current-container">
-        <h3>Wind Speed</h3>
-        <h4 id="wind-speed">1</h4>
-      </div>
+      <div>
+        <h2>Forecast for 5 days</h2>
 
-      <div class="current-container">
-        <h3>Air Humidity</h3>
-        <h4 id="air-humidity">1</h4>
-      </div>
+        <div class="forecast-container">
+          <h3 id="1-day">placeholder</h3>
+          <img id="1-condition-img" src="" />
+          <h4 id="1-condition">1</h4>
+          <h4 id="1-max-temperature">1</h4>
+          <h4 id="1-min-temperature">1</h4>
+          <h4 id="1-chance-of-rain">1</h4>
+        </div>
 
-      <div class="current-container">
-        <h3>UV Index</h3>
-        <h4 id="uv-index">1</h4>
-      </div>
-    </div>
+        <div class="forecast-container">
+          <h3 id="2-day"></h3>
+          <img id="2-condition-img" src="" />
+          <h4 id="2-condition"></h4>
+          <h4 id="2-max-temperature"></h4>
+          <h4 id="2-min-temperature"></h4>
+          <h4 id="2-chance-of-rain"></h4>
+        </div>
 
-    <div>
-      <h2>Forecast for 5 days</h2>
-
-      <div class="forecast-container">
-        <h3 id="1-day">placeholder</h3>
-        <img id="1-condition-img" src="" />
-        <h4 id="1-condition">1</h4>
-        <h4 id="1-max-temperature">1</h4>
-        <h4 id="1-min-temperature">1</h4>
-        <h4 id="1-chance-of-rain">1</h4>
-      </div>
-
-      <div class="forecast-container">
-        <h3 id="2-day"></h3>
-        <img id="2-condition-img" src="" />
-        <h4 id="2-condition"></h4>
-        <h4 id="2-max-temperature"></h4>
-        <h4 id="2-min-temperature"></h4>
-        <h4 id="2-chance-of-rain"></h4>
-      </div>
-
-      <div class="forecast-container">
-        <h3 id="3-day"></h3>
-        <img id="3-condition-img" src="" />
-        <h4 id="3-condition"></h4>
-        <h4 id="3-max-temperature"></h4>
-        <h4 id="3-min-temperature"></h4>
-        <h4 id="3-chance-of-rain"></h4>
+        <div class="forecast-container">
+          <h3 id="3-day"></h3>
+          <img id="3-condition-img" src="" />
+          <h4 id="3-condition"></h4>
+          <h4 id="3-max-temperature"></h4>
+          <h4 id="3-min-temperature"></h4>
+          <h4 id="3-chance-of-rain"></h4>
+        </div>
       </div>
     </div>
   </body>
