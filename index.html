@@ -3,6 +3,8 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
       href="https://fonts.googleapis.com/css2?family=Zilla+Slab:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600;1,700&display=swap"
       rel="stylesheet"
@@ -29,40 +31,40 @@
         <img id="condition-img" src="" />
       </div>
 
-      <div>
+      <div class="current-container">
         <h2>Today's weather details</h2>
 
-        <div class="current-container">
+        <div class="current-line">
           <h3>Thermal Sensation</h3>
           <h4 id="thermal-sensation">1</h4>
         </div>
 
-        <div class="current-container">
+        <div class="current-line">
           <h3>Precipitation Amount</h3>
           <h4 id="precipitation-amount">1</h4>
         </div>
 
-        <div class="current-container">
+        <div class="current-line">
           <h3>Wind Speed</h3>
           <h4 id="wind-speed">1</h4>
         </div>
 
-        <div class="current-container">
+        <div class="current-line">
           <h3>Air Humidity</h3>
           <h4 id="air-humidity">1</h4>
         </div>
 
-        <div class="current-container">
+        <div class="current-line">
           <h3>UV Index</h3>
           <h4 id="uv-index">1</h4>
         </div>
       </div>
 
       <div>
-        <h2>Forecast for 5 days</h2>
+        <h2>Forecast for 3 days</h2>
 
         <div class="forecast-container">
-          <h3 id="1-day">placeholder</h3>
+          <h3 class="forecast-day" id="1-day">Tomorrow</h3>
           <img id="1-condition-img" src="" />
           <h4 id="1-condition">1</h4>
           <h4 id="1-max-temperature">1</h4>
@@ -71,7 +73,7 @@
         </div>
 
         <div class="forecast-container">
-          <h3 id="2-day"></h3>
+          <h3 class="forecast-day" id="2-day">Day after tomorrow</h3>
           <img id="2-condition-img" src="" />
           <h4 id="2-condition"></h4>
           <h4 id="2-max-temperature"></h4>
@@ -80,7 +82,7 @@
         </div>
 
         <div class="forecast-container">
-          <h3 id="3-day"></h3>
+          <h3 class="forecast-day" id="3-day">Three days from now</h3>
           <img id="3-condition-img" src="" />
           <h4 id="3-condition"></h4>
           <h4 id="3-max-temperature"></h4>

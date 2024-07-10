@@ -12,26 +12,32 @@ const windSpeed = document.getElementById("wind-speed");
 const airHumidity = document.getElementById("air-humidity");
 const uvIndex = document.getElementById("uv-index");
 
-const day1 = document.getElementById("1-day");
-const conditionImg1 = document.getElementById("1-condition-img");
-const condition1 = document.getElementById("1-condition");
-const maxTemperature1 = document.getElementById("1-max-temperature");
-const minTemperature1 = document.getElementById("1-min-temperature");
-const chanceOfRain1 = document.getElementById("1-chance-of-rain");
-
-const day2 = document.getElementById("2-day");
-const conditionImg2 = document.getElementById("2-condition-img");
-const condition2 = document.getElementById("2-condition");
-const maxTemperature2 = document.getElementById("2-max-temperature");
-const minTemperature2 = document.getElementById("2-min-temperature");
-const chanceOfRain2 = document.getElementById("2-chance-of-rain");
-
-const day3 = document.getElementById("3-day");
-const conditionImg3 = document.getElementById("3-condition-img");
-const condition3 = document.getElementById("3-condition");
-const maxTemperature3 = document.getElementById("3-max-temperature");
-const minTemperature3 = document.getElementById("3-min-temperature");
-const chanceOfRain3 = document.getElementById("3-chance-of-rain");
+const dayElements = [
+  {
+    day: document.getElementById("1-day"),
+    conditionImg: document.getElementById("1-condition-img"),
+    condition: document.getElementById("1-condition"),
+    maxTemperature: document.getElementById("1-max-temperature"),
+    minTemperature: document.getElementById("1-min-temperature"),
+    chanceOfRain: document.getElementById("1-chance-of-rain"),
+  },
+  {
+    day: document.getElementById("2-day"),
+    conditionImg: document.getElementById("2-condition-img"),
+    condition: document.getElementById("2-condition"),
+    maxTemperature: document.getElementById("2-max-temperature"),
+    minTemperature: document.getElementById("2-min-temperature"),
+    chanceOfRain: document.getElementById("2-chance-of-rain"),
+  },
+  {
+    day: document.getElementById("3-day"),
+    conditionImg: document.getElementById("3-condition-img"),
+    condition: document.getElementById("3-condition"),
+    maxTemperature: document.getElementById("3-max-temperature"),
+    minTemperature: document.getElementById("3-min-temperature"),
+    chanceOfRain: document.getElementById("3-chance-of-rain"),
+  },
+];
 
 function displayCurrentData(currentData) {
   name.textContent = `${currentData.name}, ${currentData.country}`;
@@ -46,6 +52,14 @@ function displayCurrentData(currentData) {
   uvIndex.textContent = currentData.uvIndex;
 }
 
-function displayForecastData(forecastData) {}
+function displayForecastData(forecastData) {
+  forecastData.forEach((data, index) => {
+    dayElements[index].conditionImg.src = data.conditionIcon;
+    dayElements[index].condition.textContent = data.condition;
+    dayElements[index].maxTemperature.textContent = `${data.maxTemperature} °C`;
+    dayElements[index].minTemperature.textContent = `${data.minTemperature} °C`;
+    dayElements[index].chanceOfRain.textContent = `${data.chanceOfRain} %`;
+  });
+}
 
 export { displayCurrentData, displayForecastData };

@@ -1,6 +1,28 @@
+:root {
+  --pri-dark: #183e57;
+  --pri-neutral: #22577a;
+  --pri-light: #38a3a5;
+  --pri-lighter: #dbf4f6;
+  --sec-dark: #57cc99;
+  --sec-neutral: #80ed99;
+  --sec-light: #c7f9cc;
+  --sec-lighter: #e0f7e2;
+
+  --w-pri-dark: #3e10b3;
+  --w-pri-light: #5400fd;
+  --w-sec: #da3fa9;
+  --w-accent: #d5cc17;
+  --w-background: #040115;
+  --w-text: #cddbec;
+
+  --font-main: "Zilla Slab", serif;
+}
+
 * {
   box-sizing: border-box;
   margin: 0;
+  font: var(--font-main);
+  font-size: 1.1rem;
 }
 
 html,
@@ -10,12 +32,22 @@ body {
 }
 
 body {
+  width: 100%;
   display: flex;
   flex-direction: column;
   align-items: center;
+  justify-content: center;
 }
 
 .current-container {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-direction: column;
+}
+
+.current-line {
   width: 100%;
   display: flex;
   justify-content: space-between;
@@ -25,7 +57,7 @@ body {
 .forecast-container {
   width: 100%;
   display: flex;
-  justify-content: space-between;
+  justify-content: center;
   flex-direction: column;
   align-items: center;
 }
@@ -33,16 +65,34 @@ body {
 .main-container {
   width: 100%;
   display: flex;
-  justify-content: space-between;
+  justify-content: center;
   flex-direction: column;
   align-items: center;
 }
 
 #main {
-  width: 100%;
+  width: 15rem;
   height: 80%;
   display: flex;
   justify-content: center;
-  flex-direction: column;
   align-items: center;
+  flex-direction: column;
+}
+
+.forecast-day {
+  font-weight: 600;
+}
+
+h2 {
+  font-size: 1.3rem;
+  font-weight: 1000;
+  text-align: center;
+  margin-top: 20px;
+}
+
+h1 {
+  font-size: 1.5rem;
+  font-weight: 1000;
+  text-align: center;
+  margin-top: 20px;
 }
