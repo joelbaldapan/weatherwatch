@@ -7,6 +7,7 @@ const temperature = document.getElementById("temperature");
 const condition = document.getElementById("condition");
 const conditionImg = document.getElementById("condition-img");
 const thermalSensation = document.getElementById("thermal-sensation");
+const cloudCoverage = document.getElementById("cloud-coverage");
 const precipitationAmount = document.getElementById("precipitation-amount");
 const windSpeed = document.getElementById("wind-speed");
 const airHumidity = document.getElementById("air-humidity");
@@ -45,9 +46,10 @@ function displayCurrentData(currentData) {
   name.textContent = `${currentData.name}, ${currentData.country}`;
   date.textContent = getDate(currentData.dateTime, "en-US", "long");
   temperature.textContent = `${currentData.temperature} °C`;
+  thermalSensation.textContent = `Feels like ${currentData.thermalSensation} °C`;
   condition.textContent = currentData.condition;
   conditionImg.src = currentData.conditionIcon;
-  thermalSensation.textContent = `${currentData.thermalSensation} °C`;
+  cloudCoverage.textContent = `${currentData.cloudCoverage}%`;
   precipitationAmount.textContent = `${currentData.precipitationAmount} mm`;
   windSpeed.textContent = `${currentData.windSpeed} kph`;
   airHumidity.textContent = `${currentData.airHumidity}%`;
@@ -101,6 +103,7 @@ function displayGradient(currentData) {
 
   Array.from(gradientElements).forEach((element) => {
     element.style.background = `var(--${time}${weather})`;
+    void element.offsetWidth;
   });
 }
 

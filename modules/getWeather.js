@@ -21,6 +21,7 @@ function getRawData(place) {
 function processCurrentData(rawData) {
   // Current Weather Data
   console.log(rawData);
+  console.log(rawData.current.cloud);
   const cleanData = {
     name: rawData.location.name,
     country: rawData.location.country,
@@ -29,6 +30,7 @@ function processCurrentData(rawData) {
     conditionIcon: rawData.current.condition.icon,
     temperature: rawData.current.temp_c,
     thermalSensation: rawData.current.feelslike_c,
+    cloudCoverage: rawData.current.cloud,
     precipitationAmount: rawData.current.precip_mm,
     windSpeed: rawData.current.wind_kph,
     airHumidity: rawData.current.humidity,
