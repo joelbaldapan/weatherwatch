@@ -9,3 +9,6 @@ placeForm.addEventListener("submit", (event) => {
   const country = document.getElementById("country-input").value;
   getFullData(country);
 });
+
+// Placeholder
+getFullData("Tagbilaran");

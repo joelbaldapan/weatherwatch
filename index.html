@@ -7,12 +7,23 @@
       http-equiv="Content-Security-Policy"
       content="upgrade-insecure-requests"
     />
+
+    <!-- Zilla Slab -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
       href="https://fonts.googleapis.com/css2?family=Zilla+Slab:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600;1,700&display=swap"
       rel="stylesheet"
     />
+
+    <!-- Poppins -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
+      rel="stylesheet"
+    />
+
     <link rel="stylesheet" href="style.css" />
     <link rel="image_src" href="images/icons/thumbnail.png" />
     <link rel="icon" href="images/icons/icon.png" />
@@ -22,82 +33,92 @@
 
   <body>
     <div id="main">
-      <h1>Weather App: Demo</h1>
+      <div class="main-container" id="left-container">
+        <form id="place-form">
+          <label for="place-form"></label>
+          <input
+            type="text"
+            id="country-input"
+            name="place"
+            placeholder="Enter a place"
+            required
+          />
+          <button type="submit">Submit</button>
+        </form>
 
-      <form id="place-form">
-        <label for="place-form">Enter Country:</label>
-        <input type="text" id="country-input" name="place" required />
-        <button type="submit">Submit</button>
-      </form>
+        <div id="details-container">
+          <h2>Main Details</h2>
 
-      <div class="main-container">
-        <h2>Main Details</h2>
-
-        <h3 id="name"></h3>
-        <h3 id="date"></h3>
-        <h3 id="time"></h3>
-        <h3 id="temperature"></h3>
-        <h3 id="condition"></h3>
-        <img id="condition-img" src="" />
-      </div>
-
-      <div class="current-container">
-        <h2>Today's weather details</h2>
-
-        <div class="current-line">
-          <h3>Thermal Sensation</h3>
-          <h4 id="thermal-sensation"></h4>
-        </div>
-
-        <div class="current-line">
-          <h3>Precipitation Amount</h3>
-          <h4 id="precipitation-amount"></h4>
-        </div>
-
-        <div class="current-line">
-          <h3>Wind Speed</h3>
-          <h4 id="wind-speed"></h4>
-        </div>
-
-        <div class="current-line">
-          <h3>Air Humidity</h3>
-          <h4 id="air-humidity"></h4>
-        </div>
-
-        <div class="current-line">
-          <h3>UV Index</h3>
-          <h4 id="uv-index"></h4>
+          <h3 id="name"></h3>
+          <h3 id="date"></h3>
+          <h3 id="time"></h3>
+          <h3 id="temperature"></h3>
+          <h3 id="condition"></h3>
+          <img id="condition-img" src="" />
         </div>
       </div>
 
-      <div>
-        <h2>Forecast for 3 days</h2>
+      <div class="main-container" id="right-container">
+        <div id="current-container">
+          <h2>Today's weather details</h2>
 
-        <div class="forecast-container">
-          <h3 class="forecast-day" id="1-day">Tomorrow</h3>
-          <img id="1-condition-img" src="" />
-          <h4 id="1-condition"></h4>
-          <h4 id="1-max-temperature"></h4>
-          <h4 id="1-min-temperature"></h4>
-          <h4 id="1-chance-of-rain"></h4>
+          <div class="current-line">
+            <h3>Thermal Sensation</h3>
+            <h4 id="thermal-sensation"></h4>
+          </div>
+
+          <div class="current-line">
+            <h3>Precipitation Amount</h3>
+            <h4 id="precipitation-amount"></h4>
+          </div>
+
+          <div class="current-line">
+            <h3>Wind Speed</h3>
+            <h4 id="wind-speed"></h4>
+          </div>
+
+          <div class="current-line">
+            <h3>Air Humidity</h3>
+            <h4 id="air-humidity"></h4>
+          </div>
+
+          <div class="current-line">
+            <h3>UV Index</h3>
+            <h4 id="uv-index"></h4>
+          </div>
         </div>
 
-        <div class="forecast-container">
-          <h3 class="forecast-day" id="2-day">Day after tomorrow</h3>
-          <img id="2-condition-img" src="" />
-          <h4 id="2-condition"></h4>
-          <h4 id="2-max-temperature"></h4>
-          <h4 id="2-min-temperature"></h4>
-          <h4 id="2-chance-of-rain"></h4>
-        </div>
+        <div id="forecast-container">
+          <div><h2>Forecast for 3 days</h2></div>
 
-        <div class="forecast-container">
-          <h3 class="forecast-day" id="3-day">Three days from now</h3>
-          <img id="3-condition-img" src="" />
-          <h4 id="3-condition"></h4>
-          <h4 id="3-max-temperature"></h4>
-          <h4 id="3-min-temperature"></h4>
-          <h4 id="3-chance-of-rain"></h4>
+          <div id="forecast-details-container">
+            <div class="forecast-line">
+              <h3 class="forecast-day" id="1-day">Tomorrow</h3>
+              <img id="1-condition-img" src="" />
+              <h4 id="1-condition"></h4>
+              <h4 id="1-max-temperature"></h4>
+              <h4 id="1-min-temperature"></h4>
+              <h4 id="1-chance-of-rain"></h4>
+            </div>
+
+            <div class="forecast-line">
+              <h3 class="forecast-day" id="2-day">Day after tomorrow</h3>
+              <img id="2-condition-img" src="" />
+              <h4 id="2-condition"></h4>
+              <h4 id="2-max-temperature"></h4>
+              <h4 id="2-min-temperature"></h4>
+              <h4 id="2-chance-of-rain"></h4>
+            </div>
+
+            <div class="forecast-line">
+              <h3 class="forecast-day" id="3-day">Three days from now</h3>
+              <img id="3-condition-img" src="" />
+              <h4 id="3-condition"></h4>
+              <h4 id="3-max-temperature"></h4>
+              <h4 id="3-min-temperature"></h4>
+              <h4 id="3-chance-of-rain"></h4>
+            </div>
+          </div>
         </div>
       </div>
     </div>

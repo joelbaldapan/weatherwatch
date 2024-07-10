@@ -56,9 +56,13 @@ function displayForecastData(forecastData) {
   forecastData.forEach((data, index) => {
     dayElements[index].conditionImg.src = data.conditionIcon;
     dayElements[index].condition.textContent = data.condition;
-    dayElements[index].maxTemperature.textContent = `${data.maxTemperature} °C`;
-    dayElements[index].minTemperature.textContent = `${data.minTemperature} °C`;
-    dayElements[index].chanceOfRain.textContent = `${data.chanceOfRain} %`;
+    dayElements[
+      index
+    ].maxTemperature.textContent = `hi | ${data.maxTemperature} °C`;
+    dayElements[
+      index
+    ].minTemperature.textContent = `lo | ${data.minTemperature} °C`;
+    dayElements[index].chanceOfRain.textContent = `🌧️ ${data.chanceOfRain} %`;
   });
 }
 
