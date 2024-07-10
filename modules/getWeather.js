@@ -1,4 +1,8 @@
-import { displayCurrentData, displayForecastData } from "./display.js";
+import {
+  displayCurrentData,
+  displayForecastData,
+  displayGradient,
+} from "./display.js";
 
 const API_KEY = "48a18ac69ca341a5bde185718240707";
 const DAYS = 3;
@@ -16,6 +20,7 @@ function getRawData(place) {
 
 function processCurrentData(rawData) {
   // Current Weather Data
+  console.log(rawData);
   const cleanData = {
     name: rawData.location.name,
     country: rawData.location.country,
@@ -37,7 +42,7 @@ function processForecastData(rawData) {
   const fullCleanData = [];
   rawData.forecast.forecastday.forEach((rawForecastData) => {
     const cleanData = {
-      // PUT: name of the day
+      date: rawForecastData.date,
       condition: rawForecastData.day.condition.text,
       conditionIcon: rawForecastData.day.condition.icon,
       maxTemperature: rawForecastData.day.maxtemp_c,
@@ -54,6 +59,7 @@ async function getFullData(place) {
     const rawData = await getRawData(place);
     const currentData = processCurrentData(rawData);
     displayCurrentData(currentData);
+    displayGradient(currentData);
     const forecastData = processForecastData(rawData);
     displayForecastData(forecastData);
   } catch (error) {

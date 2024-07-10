@@ -39,21 +39,24 @@ const dayElements = [
   },
 ];
 
+const gradientElements = document.getElementsByClassName("gradient");
+
 function displayCurrentData(currentData) {
   name.textContent = `${currentData.name}, ${currentData.country}`;
-  date.textContent = currentData.dateTime;
+  date.textContent = getDate(currentData.dateTime, "en-US", "long");
   temperature.textContent = `${currentData.temperature} °C`;
   condition.textContent = currentData.condition;
   conditionImg.src = currentData.conditionIcon;
   thermalSensation.textContent = `${currentData.thermalSensation} °C`;
   precipitationAmount.textContent = `${currentData.precipitationAmount} mm`;
   windSpeed.textContent = `${currentData.windSpeed} kph`;
-  airHumidity.textContent = `${currentData.airHumidity} %`;
+  airHumidity.textContent = `${currentData.airHumidity}%`;
   uvIndex.textContent = currentData.uvIndex;
 }
 
 function displayForecastData(forecastData) {
   forecastData.forEach((data, index) => {
+    dayElements[index].day.textContent = getDay(data.date, "en-US", "long");
     dayElements[index].conditionImg.src = data.conditionIcon;
     dayElements[index].condition.textContent = data.condition;
     dayElements[
@@ -62,8 +65,58 @@ function displayForecastData(forecastData) {
     dayElements[
       index
     ].minTemperature.textContent = `lo | ${data.minTemperature} °C`;
-    dayElements[index].chanceOfRain.textContent = `🌧️ ${data.chanceOfRain} %`;
+    dayElements[index].chanceOfRain.textContent = `🌧️ ${data.chanceOfRain}%`;
   });
 }
 
-export { displayCurrentData, displayForecastData };
+function displayGradient(currentData) {
+  const cloudyWords = [
+    "cloudy",
+    "overcast",
+    "mist",
+    "dnow",
+    "ice",
+    "blizzard",
+    "fog",
+    "frizzle",
+    "light",
+    "patchy",
+    "moderate",
+  ];
+  const stormyWords = ["heavy", "thunder", "shower"];
+
+  // Check if cloudy, stormy, day
+  const condition = currentData.condition.toLowerCase();
+  const isCloudy = cloudyWords.some((word) => condition.includes(word));
+  const isStormy = stormyWords.some((word) => condition.includes(word));
+  const isDay = conditionImg.src.includes("day");
+
+  // Change gradient
+  let time = "night";
+  let weather = "";
+
+  if (isDay) time = "day";
+  if (isCloudy) weather = "-cloudy";
+  if (isStormy) weather = "-stormy";
+
+  Array.from(gradientElements).forEach((element) => {
+    element.style.background = `var(--${time}${weather})`;
+  });
+}
+
+function getDay(dateStr, locale, length) {
+  let date = new Date(dateStr);
+  return date.toLocaleDateString(locale, { weekday: length });
+}
+
+function getDate(dateStr, locale, length) {
+  let date = new Date(dateStr);
+  return date.toLocaleDateString(locale, {
+    weekday: length,
+    year: "numeric",
+    month: "long",
+    day: "numeric",
+  });
+}
+
+export { displayCurrentData, displayForecastData, displayGradient };
