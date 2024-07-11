@@ -113,7 +113,6 @@ body {
   }
   .main-container {
     width: 80vw;
-    height: auto;
   }
   #left-container {
     margin-left: 3rem;
@@ -367,4 +366,41 @@ button:active {
 
 #loading h3 {
   font-size: 1.5rem;
+}
+
+.hidden-box {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+
+  overflow: hidden;
+  width: 6rem;
+  height: 100%;
+  /* background: #151515; */
+}
+
+.hidden-box-forecast {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  position: relative;
+  overflow: hidden;
+  width: 6rem;
+  height: 100%;
+  /* background: #151515; */
+}
+
+.text-animate {
+  animation: moveUp 1s forwards;
+  text-align: center;
+}
+
+@keyframes moveUp {
+  0% {
+    transform: translateY(50px); /* Same height as the hidden box */
+  }
+  100% {
+    transform: translateY(0);
+  }
 }

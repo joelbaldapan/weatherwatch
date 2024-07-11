@@ -3,12 +3,14 @@ import { displayGradient } from "./modules/display.js";
 
 // temporary?
 const placeForm = document.getElementById("place-form");
+const countryInput = document.getElementById("country-input");
 
 placeForm.addEventListener("submit", (event) => {
   event.preventDefault(); // Prevent the form from submitting the traditional way
 
-  const country = document.getElementById("country-input").value;
-  getFullData(country);
+  const inputValue = document.getElementById("country-input").value;
+  countryInput.value = "";
+  getFullData(inputValue);
 });
 
 // Placeholder

@@ -109,6 +109,15 @@ function displayGradient(currentData) {
   });
 }
 
+function reloadTextAnimations() {
+  const elements = document.querySelectorAll(".text-animate");
+  elements.forEach((element) => {
+    element.style.animation = "none";
+    void element.offsetWidth;
+    element.style.animation = "moveUp 1s forwards";
+  });
+}
+
 function cloneDetails(fix, original) {
   const fixContainer = document.getElementById(fix);
   const container = document.getElementById(original);
@@ -120,7 +129,7 @@ function cloneDetails(fix, original) {
   fixContainer.appendChild(clonedContainer);
 
   setTimeout(() => {
-    clonedContainer.remove(); // Removes the element from the DOM
+    clonedContainer.remove();
   }, 2000);
 }
 
@@ -152,4 +161,5 @@ export {
   displayForecastData,
   displayGradient,
   displayLoading,
+  reloadTextAnimations,
 };

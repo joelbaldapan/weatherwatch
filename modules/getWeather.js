@@ -3,10 +3,11 @@ import {
   displayForecastData,
   displayGradient,
   displayLoading,
+  reloadTextAnimations,
 } from "./display.js";
 
 const API_KEY = "48a18ac69ca341a5bde185718240707";
-const DAYS = 3;
+const DAYS = 4;
 
 function getRawData(place) {
   return new Promise((resolve, reject) => {
@@ -43,6 +44,7 @@ function processCurrentData(rawData) {
 function processForecastData(rawData) {
   // Future Weather Forecast
   const fullCleanData = [];
+  rawData.forecast.forecastday.shift();
   rawData.forecast.forecastday.forEach((rawForecastData) => {
     const cleanData = {
       date: rawForecastData.date,
@@ -67,12 +69,12 @@ async function getFullData(place) {
     const rawData = await getRawData(place);
     clearTimeout(loadingTimeout);
     displayLoading("hidden"); // Ensure to hide loading if data comes before 100ms
-
     const currentData = processCurrentData(rawData);
     displayCurrentData(currentData);
     displayGradient(currentData);
     const forecastData = processForecastData(rawData);
     displayForecastData(forecastData);
+    reloadTextAnimations();
   } catch (error) {
     clearTimeout(loadingTimeout);
     displayLoading("hidden"); // Ensure to hide loading if there's an error
