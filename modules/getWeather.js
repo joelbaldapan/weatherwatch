@@ -90,12 +90,6 @@ function getWeatherIcon(condition, time) {
         "light rain shower",
         "moderate or heavy rain shower",
         "torrential rain shower",
-      ],
-      icon: "_rain.png",
-    },
-    {
-      conditions: [
-        "thundery outbreaks possible",
         "patchy rain possible",
         "patchy light rain",
         "light rain",
@@ -106,6 +100,12 @@ function getWeatherIcon(condition, time) {
         "light rain shower",
         "moderate or heavy rain shower",
         "torrential rain shower",
+      ],
+      icon: "_rain.png",
+    },
+    {
+      conditions: [
+        "thundery outbreaks possible",
         "patchy light rain with thunder",
         "moderate or heavy rain with thunder",
       ],
@@ -148,13 +148,6 @@ function getWeatherIcon(condition, time) {
     },
     {
       conditions: [
-        "patchy snow possible",
-        "patchy light snow",
-        "light snow",
-        "patchy moderate snow",
-        "moderate snow",
-        "patchy heavy snow",
-        "heavy snow",
         "patchy light snow with thunder",
         "moderate or heavy snow with thunder",
       ],
@@ -182,7 +175,7 @@ function getWeatherIcon(condition, time) {
   }
 
   if (time === "none") {
-    selectedIcon = selectedIcon.replace("_", "night_half_moon_");
+    selectedIcon = selectedIcon.replace("_", "");
     return `images/weather-icons/${selectedIcon}`;
   }
 
