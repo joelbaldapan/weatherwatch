@@ -6,7 +6,7 @@ import {
   reloadTextAnimations,
 } from "./display.js";
 
-const API_KEY = "48a18ac69ca341a5bde185718240707";
+const API_KEY = "04f9c8a5363e4af7b0c203026241107";
 const DAYS = 4;
 
 function getRawData(place) {

@@ -1,5 +1,4 @@
 import { getFullData } from "./modules/getWeather.js";
-import { displayGradient } from "./modules/display.js";
 
 // temporary?
 const placeForm = document.getElementById("place-form");
@@ -15,4 +14,3 @@ placeForm.addEventListener("submit", (event) => {
 
 // Placeholder
 getFullData("Tagbilaran");
-displayGradient();
