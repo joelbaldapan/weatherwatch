@@ -31,7 +31,8 @@
     <title>Weather App</title>
   </head>
 
-  <body class="gradient">
+  <body id="body">
+    <div class="gradient" id="background-overlay"></div>
     <div id="main">
       <div class="main-container glass" id="left-container">
         <form id="place-form">
@@ -47,17 +48,19 @@
           <button type="submit">Submit</button>
         </form>
 
-        <div class="gradient" id="details-container">
-          <h2 id="name"></h2>
+        <div id="details-fix-container">
+          <div class="gradient" id="details-container">
+            <h2 id="name"></h2>
 
-          <h3 id="date"></h3>
-          <h3 id="time"></h3>
+            <h3 id="date"></h3>
+            <h3 id="time"></h3>
 
-          <img id="condition-img" src="" />
-          <h3 id="condition"></h3>
+            <img id="condition-img" src="" />
+            <h3 id="condition"></h3>
 
-          <h3 id="temperature"></h3>
-          <h3 id="thermal-sensation"></h3>
+            <h3 id="temperature"></h3>
+            <h3 id="thermal-sensation"></h3>
+          </div>
         </div>
       </div>
 

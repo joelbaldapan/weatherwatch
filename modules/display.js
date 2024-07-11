@@ -101,10 +101,27 @@ function displayGradient(currentData) {
   if (isCloudy) weather = "-cloudy";
   if (isStormy) weather = "-stormy";
 
+  cloneDetails("details-fix-container", "details-container");
+  cloneDetails("body", "background-overlay");
+
   Array.from(gradientElements).forEach((element) => {
     element.style.background = `var(--${time}${weather})`;
-    void element.offsetWidth;
   });
+}
+
+function cloneDetails(fix, original) {
+  const fixContainer = document.getElementById(fix);
+  const container = document.getElementById(original);
+  const clonedContainer = container.cloneNode(true);
+
+  clonedContainer.classList.add("gradient-overlay");
+  clonedContainer.classList.remove("gradient");
+
+  fixContainer.appendChild(clonedContainer);
+
+  setTimeout(() => {
+    clonedContainer.remove(); // Removes the element from the DOM
+  }, 2000);
 }
 
 function getDay(dateStr, locale, length) {

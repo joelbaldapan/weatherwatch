@@ -82,6 +82,8 @@ body {
   flex-direction: column;
   align-items: center;
   justify-content: center;
+
+  position: relative;
 }
 
 #main {
@@ -91,7 +93,7 @@ body {
   flex-direction: row;
   justify-content: center;
   align-items: center;
-  margin: 2rem 0;
+  margin: 1.7rem 0;
 }
 
 .main-container {
@@ -210,10 +212,6 @@ body {
   box-shadow: 0 8px 32px 0 rgba(56, 45, 45, 0.37);
 }
 
-.gradient {
-  transition: background 1s ease-in-out;
-}
-
 h2 {
   font-size: 1.5rem;
   font-weight: 500;
@@ -273,4 +271,39 @@ button:active {
 
 #condition-img {
   width: 8rem;
+}
+
+.gradient {
+  transition: translate 1s ease-in-out;
+}
+
+#background-overlay {
+  width: 100%;
+  height: 100%;
+  position: fixed;
+  z-index: -1;
+}
+
+#details-fix-container {
+  height: 100%;
+  position: relative;
+}
+
+.gradient-overlay {
+  height: 100%;
+  z-index: 2;
+  position: absolute;
+  top: 0;
+  left: 0;
+  opacity: 100;
+  animation: fade-overlay 2s forwards;
+}
+
+@keyframes fade-overlay {
+  from {
+    opacity: 100;
+  }
+  to {
+    opacity: 0;
+  }
 }
