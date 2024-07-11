@@ -5,6 +5,7 @@ import {
   displayLoading,
   reloadTextAnimations,
 } from "./display.js";
+import { playSound } from "./playSound.js";
 
 const API_KEY = "04f9c8a5363e4af7b0c203026241107";
 const DAYS = 4;
@@ -198,6 +199,7 @@ async function getFullData(place) {
     displayGradient(currentData);
     const forecastData = processForecastData(rawData);
     displayForecastData(forecastData);
+    playSound(currentData);
     reloadTextAnimations();
   } catch (error) {
     clearTimeout(loadingTimeout);
