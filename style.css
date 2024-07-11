@@ -231,13 +231,14 @@ h4 {
 #place-form {
   display: flex;
   height: 3rem;
+  margin-bottom: 0.5rem;
 }
 
 #country-input {
   padding-left: 1rem;
   width: 100%;
-  background-color: rgb(21, 21, 21);
-  border: rgb(21, 21, 21);
+
+  border-radius: 1rem;
 }
 
 #country-input:-webkit-autofill,
@@ -252,13 +253,20 @@ h4 {
 }
 
 button {
-  padding: 1rem;
-  background-color: rgb(21, 21, 21);
-  border: rgb(21, 21, 21);
+  border-radius: 1rem;
+  margin-left: 0.3rem;
+  width: 4rem;
+  text-align: center;
 }
 
 button:hover {
-  filter: brightness(1.5);
+  border-radius: 1rem;
+  margin-left: 0.3rem;
+  width: 4rem;
+  text-align: center;
+
+  background-color: rgb(21, 21, 21);
+  border: rgb(21, 21, 21);
 }
 
 button:active {
@@ -271,10 +279,6 @@ button:active {
 
 #condition-img {
   width: 8rem;
-}
-
-.gradient {
-  transition: translate 1s ease-in-out;
 }
 
 #background-overlay {
