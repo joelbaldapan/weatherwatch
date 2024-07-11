@@ -43,8 +43,7 @@
     rgba(23, 25, 41, 1) 100%
   );
 
-  --night-cloudy: rgb(38, 47, 75);
-  background: linear-gradient(
+  --night-cloudy: linear-gradient(
     0deg,
     rgba(38, 47, 75, 1) 1%,
     rgba(43, 52, 78, 1) 60%,
@@ -70,6 +69,10 @@
   color: var(--w-text);
 }
 
+*::-webkit-scrollbar {
+  display: none; /* for Chrome, Safari, and Opera */
+}
+
 html,
 body {
   margin: 0;
@@ -84,6 +87,7 @@ body {
   justify-content: center;
 
   position: relative;
+  background: var(--night-stormy);
 }
 
 #main {
@@ -94,11 +98,12 @@ body {
   justify-content: center;
   align-items: center;
   margin: 1.7rem 0;
+  overflow: hidden;
 }
 
 .main-container {
   width: 100%;
-  height: 92vh;
+  height: 93vh;
 }
 
 @media (max-width: 930px) {
@@ -144,6 +149,7 @@ body {
 }
 
 #details-container {
+  background: var(--night-stormy);
   border: 5px transparent #c7c7c7;
   border-radius: 1rem;
   padding: 1rem;
@@ -298,6 +304,7 @@ button:active {
 }
 
 #background-overlay {
+  background: var(--night-stormy);
   width: 100%;
   height: 100%;
   position: absolute;
@@ -326,4 +333,38 @@ button:active {
   to {
     opacity: 0;
   }
+}
+
+#loading img {
+  border-radius: 6rem;
+  box-shadow: 0 8px 32px 0 rgba(56, 45, 45, 1);
+  width: 15rem;
+  height: 15rem;
+  margin-bottom: 1rem;
+}
+
+#loading {
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  background-color: rgba(0, 0, 0, 0.1);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+
+  position: fixed;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  z-index: 10;
+}
+
+#loading h2 {
+  font-size: 1.8rem;
+  line-height: 1.2rem;
+}
+
+#loading h3 {
+  font-size: 1.5rem;
 }

@@ -2,6 +2,7 @@ import {
   displayCurrentData,
   displayForecastData,
   displayGradient,
+  displayLoading,
 } from "./display.js";
 
 const API_KEY = "48a18ac69ca341a5bde185718240707";
@@ -57,14 +58,24 @@ function processForecastData(rawData) {
 }
 
 async function getFullData(place) {
+  let loadingTimeout;
   try {
+    loadingTimeout = setTimeout(() => {
+      displayLoading("visible");
+    }, 100);
+
     const rawData = await getRawData(place);
+    clearTimeout(loadingTimeout);
+    displayLoading("hidden"); // Ensure to hide loading if data comes before 100ms
+
     const currentData = processCurrentData(rawData);
     displayCurrentData(currentData);
     displayGradient(currentData);
     const forecastData = processForecastData(rawData);
     displayForecastData(forecastData);
   } catch (error) {
+    clearTimeout(loadingTimeout);
+    displayLoading("hidden"); // Ensure to hide loading if there's an error
     console.log(error);
   }
 }
