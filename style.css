@@ -298,10 +298,6 @@ button:active {
   font-weight: 400;
 }
 
-#condition-img {
-  width: 8rem;
-}
-
 #background-overlay {
   background: var(--night-stormy);
   width: 100%;
@@ -403,4 +399,14 @@ button:active {
   100% {
     transform: translateY(0);
   }
+}
+
+.forecast-img {
+  width: 3rem;
+  height: 3rem;
+}
+
+#condition-img {
+  width: 8rem;
+  height: 8rem;
 }
