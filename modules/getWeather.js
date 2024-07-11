@@ -71,7 +71,7 @@ function getWeatherIcon(condition, time) {
   // Arrays categorizing conditions into corresponding icon filenames
   const iconSet = [
     { conditions: ["cloudy"], icon: "cloudy.png" },
-    { conditions: ["sunny", "clear"], icon: "clear.png" },
+    { conditions: ["sunny", "clear"], icon: "_clear.png" },
     { conditions: ["fog"], icon: "fog.png" },
     { conditions: ["overcast"], icon: "overcast.png" },
     { conditions: ["mist"], icon: "mist.png" },

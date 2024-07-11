@@ -211,6 +211,7 @@ body {
   font-size: 1.5rem;
   font-weight: 400;
   margin-bottom: 2rem;
+  text-align: center;
 }
 
 #condition {
@@ -292,9 +293,10 @@ h2 {
   }
 
   #date {
-    font-size: 1.5rem;
+    font-size: 1.2rem;
     font-weight: 400;
     margin-bottom: 1rem;
+    text-align: center;
   }
 
   #condition {
