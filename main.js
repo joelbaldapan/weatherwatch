@@ -12,5 +12,23 @@ placeForm.addEventListener("submit", (event) => {
   getFullData(inputValue);
 });
 
-// Placeholder
-getFullData("Tagbilaran");
+// Init
+function getLocation() {
+  if (navigator.geolocation) {
+    navigator.geolocation.getCurrentPosition(getPosition, catchError);
+  } else {
+    alert("Geolocation is not supported by this browser.");
+  }
+}
+
+function getPosition(position) {
+  const latitude = position.coords.latitude;
+  const longitude = position.coords.longitude;
+  getFullData(`${latitude},${longitude}`);
+}
+
+function catchError(error) {
+  getFullData(`Nowhere`);
+}
+
+getLocation();

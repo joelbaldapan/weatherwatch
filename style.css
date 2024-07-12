@@ -420,7 +420,7 @@ button:active {
   }
 }
 
-#loading img {
+#loading-img {
   border-radius: 6rem;
   box-shadow: 0 8px 32px 0 rgba(56, 45, 45, 1);
   width: 15rem;

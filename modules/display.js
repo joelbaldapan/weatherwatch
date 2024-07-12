@@ -1,4 +1,9 @@
-import { cloneDetails, displayLoading, getDay, getDate } from "./utils.js";
+import {
+  cloneDetails,
+  displayLoading,
+  getDay,
+  getDate,
+} from "./utils.js";
 
 // DOM Manipulation
 
