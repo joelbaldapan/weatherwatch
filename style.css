@@ -165,6 +165,7 @@ body {
 }
 
 #forecast-details-container {
+  height: 100%;
   text-align: center;
   display: flex;
   justify-content: center;
@@ -322,7 +323,7 @@ h2 {
   }
 
   .forecast-line h3 {
-    font-size: min(4.5vw, 1.5rem);
+    font-size: min(4.2vw, 1.3rem);
   }
 
   .forecast-img {
@@ -341,6 +342,7 @@ h2 {
     font-weight: 600;
     text-align: center;
   }
+
 }
 
 #place-form {
