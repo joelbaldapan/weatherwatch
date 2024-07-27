@@ -9,7 +9,7 @@ import { playSound } from "./playSound.js";
 import { getTime, getWeatherIcon } from "./utils.js";
 
 const API_KEY = "04f9c8a5363e4af7b0c203026241107";
-const DAYS = 4;
+const DAYS = 3;
 
 function getRawData(place) {
   return new Promise((resolve, reject) => {
@@ -79,6 +79,7 @@ async function getFullData(place) {
     displayForecastData(forecastData);
     playSound(currentData);
     reloadTextAnimations();
+    console.log(forecastData)
   } catch (error) {
     clearTimeout(loadingTimeout);
     displayLoading("hidden"); // Ensure to hide loading if there's an error
